@@ -11,7 +11,7 @@
   <div>
     <span class="label">cssClass</span>
     <span class="value">{{ cssClass }}</span>
-  </div>
+  </div> 
   <button [disabled]="eventState === 'start'" (click)="toggleShowNotifNav()">Animate</button>
 </section>
 <section
@@ -31,9 +31,8 @@
     <li>Notification 6</li>
   </ul>
 </section>
-
 <section class="panel panel2 {{ cssClass }}">
-  <ul>
+  <ul *ngIf="cssClass === 'animation-show' || (eventState === 'start' && cssClass === 'animation-hide')">
     <li>State {{ cssClass }}</li>
     <li>Notification 2.1</li>
     <li>Notification 2.2</li>

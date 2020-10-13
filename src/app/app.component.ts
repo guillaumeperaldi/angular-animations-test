@@ -25,12 +25,14 @@ export class AppComponent  {
   }
 
   panelAnimationStart(ev: any): void {
+    console.log('panelAnimationStart');
     this.eventState = 'start';
     this.cssClass = this.showNotifNav ? 'animation-show': 'animation-hide';
     this.debug = ev;
   }
 
   panelAnimationEnd(ev: any): void {
+    console.log('panelAnimationEnd'); 
     this.eventState = 'end';
     this.debug = ev;
   }
