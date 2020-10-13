@@ -7,8 +7,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   styleUrls: [ './app.component.css' ],
   animations: [
     trigger('panelAnimation', [
-      transition(':enter', animate('5000ms ease-in-out')),
-      transition(':leave', animate('5000ms ease-in-out'))
+      transition(':enter', animate('500ms')),
+      transition(':leave', animate('500ms'))
     ])
   ]
 })

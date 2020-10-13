@@ -33,7 +33,7 @@ section.panel {
   border: 2px solid gray;
   width: 200px;
   background: #EEE;
-  transition: all 5000ms ease;
+  transition: all 500ms ease;
 }
 .panel {
   top: 0;

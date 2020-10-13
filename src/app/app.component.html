@@ -14,23 +14,15 @@
   </div> 
   <button [disabled]="eventState === 'start'" (click)="toggleShowNotifNav()">Animate</button>
 </section>
-<section
+
+<div
   *ngIf="showNotifNav"
   [@panelAnimation]="showNotifNav"
   (@panelAnimation.start)="panelAnimationStart($event)"
   (@panelAnimation.done)="panelAnimationEnd($event)"
   class="panel {{ cssClass }}"
   >
-  <ul>
-    <li>State {{ cssClass }}</li>
-    <li>Notification 1</li>
-    <li>Notification 2</li>
-    <li>Notification 3</li>
-    <li>Notification 4</li>
-    <li>Notification 5</li>
-    <li>Notification 6</li>
-  </ul>
-</section>
+</div>
 <section class="panel panel2 {{ cssClass }}">
   <ul *ngIf="cssClass === 'animation-show' || (eventState === 'start' && cssClass === 'animation-hide')">
     <li>State {{ cssClass }}</li>
