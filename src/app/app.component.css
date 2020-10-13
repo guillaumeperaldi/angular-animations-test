@@ -1,3 +1,53 @@
-p {
+:host {
   font-family: Lato;
+  font-size: 14px;
+  border: 1px solid red;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-height: 800px;
+}
+section.debug {
+  border: none;
+  padding: 15px;
+}
+.header {
+  padding-bottom: 8px;
+}
+button {
+  margin-top: 30px;
+}
+.label {
+  display: inline-block; 
+  width :150px;
+  font-weight: bold;
+}
+.value {
+  display: inline;
+  opacity: 0.72;
+}
+section.panel {
+  position: absolute;
+  right: 0;
+  transform: translateX(0);
+  border: 2px solid gray;
+  width: 200px;
+  background: #EEE;
+  transition: all 5000ms ease;
+}
+.panel {
+  top: 0;
+}
+.panel2 {
+  top: 200px;
+}
+section.panel.animation-hide {
+  border: 2px solid red;
+  background: green !important;
+  transform: translateX(200px);
+}
+section.panel.animation-show {
+  border: 2px solid blue;
+  background: white !important;
+  transform: translateX(0);
 }
