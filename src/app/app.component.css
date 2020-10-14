@@ -26,28 +26,12 @@ button {
   display: inline;
   opacity: 0.72;
 }
-section.panel {
+.notifications-panel {
   position: absolute;
   right: 0;
+  top: 0;
   transform: translateX(0);
   border: 2px solid gray;
   width: 200px;
   background: #eee;
-}
-.panel1 {
-  top: 0;
-}
-.panel2 {
-  top: 200px;
-  transition: all 500ms ease;
-}
-section.panel2.animation-hide {
-  border: 2px solid red;
-  background: green !important;
-  transform: translateX(200px);
-}
-section.panel2.animation-show {
-  border: 2px solid blue;
-  background: white !important;
-  transform: translateX(0);
 }
