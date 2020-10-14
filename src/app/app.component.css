@@ -26,6 +26,10 @@ button {
   display: inline;
   opacity: 0.72;
 }
+.outer-panel {
+  border: 2px solid red;
+  padding: 8px;
+}
 .notifications-panel {
   position: absolute;
   right: 0;
