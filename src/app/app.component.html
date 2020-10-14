@@ -4,10 +4,11 @@
 		<span class="label">Toggle status</span>
 		<span class="value">{{ showNotifNav }}</span>
 	</div>
-	<button [disabled]="eventState === 'start'" (click)="toggleShowNotifNav()">Toggle panel</button>
+	<button [disabled]="eventState === animationPhase.start" (click)="toggleShowNotifNav()">Toggle panel</button>
 </section>
 
-<div *ngIf="showNotifNav" [@panelAnimation]="showNotifNav" class="notifications-panel">
+<div *ngIf="showNotifNav" [@panelAnimation]="showNotifNav" (@panelAnimation.start)="panelAnimationStart($event)"
+	(@panelAnimation.done)="panelAnimationEnd($event)" class="notifications-panel">
 	<ul>
 		<li>Notification 2.1</li>
 		<li>Notification 2.2</li>

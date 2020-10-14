@@ -2,11 +2,21 @@ import { Component, VERSION } from "@angular/core";
 import {
   animate,
   animation,
+  AnimationEvent,
   style,
   transition,
   trigger,
   useAnimation
 } from "@angular/animations";
+
+/**
+ * The animation phase in which the callback was invoked, one of
+ * "start" or "done".
+ */
+export enum AnimationPhaseName {
+  "start" = "start",
+  "done" = "done"
+}
 
 export const slideInAnimation = animation([
   style({ transform: "translateX(100%)" }),
@@ -33,8 +43,19 @@ export class AppComponent {
   debug: any;
   eventState = "";
   showNotifNav = false;
+  animationPhase = AnimationPhaseName;
 
   toggleShowNotifNav(): void {
     this.showNotifNav = !this.showNotifNav;
+  }
+
+  panelAnimationStart(event: AnimationEvent): void {
+    this.eventState = event.phaseName;
+    console.log(event.phaseName);
+  }
+
+  panelAnimationEnd(event: AnimationEvent): void {
+    this.eventState = event.phaseName;
+    console.log(event.phaseName);
   }
 }
