@@ -8,7 +8,9 @@
 </section>
 
 <div *ngIf="showNotifNav" [@panelAnimation]="showNotifNav" (@panelAnimation.start)="panelAnimationStart($event)"
-	(@panelAnimation.done)="panelAnimationEnd($event)" class="notifications-panel">
+	(@panelAnimation.done)="panelAnimationEnd($event)" class="notifications-panel"
+  (click)="toggleShowNotifNav()" (panright)="toggleShowNotifNav()"
+  >
 	<ul>
 		<li>Notification 2.1</li>
 		<li>Notification 2.2</li>
