@@ -6,8 +6,9 @@
 	</div>
 	<button [disabled]="eventState === animationPhase.start" (click)="toggleShowNotifNav()">Toggle panel</button>
 </section>
-<div *ngIf="showNotifNav" [@panelAnimation]="showNotifNav" (@panelAnimation.start)="panelAnimationStart($event)"
-	(@panelAnimation.done)="panelAnimationEnd($event)" class="notifications-panel" (click)="toggleShowNotifNav()"
+<div *ngIf="showNotifNav" class="notifications-panel" [@panelAnimation]="showNotifNav"
+	(@panelAnimation.start)="panelAnimationStartCallBack($event)"
+	(@panelAnimation.done)="panelAnimationEndCallBack($event)" (click)="toggleShowNotifNav()"
 	(panright)="toggleShowNotifNav()">
 	<ul>
 		<li>Notification 2.1</li>

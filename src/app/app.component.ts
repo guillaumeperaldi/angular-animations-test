@@ -49,13 +49,15 @@ export class AppComponent {
     this.showNotifNav = !this.showNotifNav;
   }
 
-  panelAnimationStart(event: AnimationEvent): void {
+  panelAnimationStartCallBack(event: AnimationEvent): void {
     this.eventState = event.phaseName;
+    // do something on start
     console.log(event.phaseName);
   }
 
-  panelAnimationEnd(event: AnimationEvent): void {
+  panelAnimationEndCallBack(event: AnimationEvent): void {
     this.eventState = event.phaseName;
+    // do something on end
     console.log(event.phaseName);
   }
 }
