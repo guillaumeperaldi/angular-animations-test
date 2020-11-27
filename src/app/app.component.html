@@ -1,3 +1,8 @@
+<nav>
+  <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton">Crisis Center</a> |
+  <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
 <section class="debug">
 	<div class="header">Debug : </div>
 	<div>
@@ -5,6 +10,11 @@
 		<span class="value">{{ showNotifNav }}</span>
 	</div>
 	<button [disabled]="eventState === animationPhase.start" (click)="toggleShowNotifNav()">Toggle panel</button>
+
+	<hr />
+	<div class="progress-bar" [@enabledStateChange]="eventState">
+
+	</div>
 </section>
 <div *ngIf="showNotifNav" class="notifications-panel" [@panelAnimation]="showNotifNav"
 	(@panelAnimation.start)="panelAnimationStartCallBack($event)"

@@ -1,31 +1,18 @@
-import { Component, VERSION } from "@angular/core";
+import { Component } from "@angular/core";
 import {
   animate,
-  animation,
   AnimationEvent,
+  state,
   style,
   transition,
   trigger,
   useAnimation
 } from "@angular/animations";
-
-/**
- * The animation phase in which the callback was invoked, one of
- * "start" or "done".
- */
-export enum AnimationPhaseName {
-  "start" = "start",
-  "done" = "done"
-}
-
-export const slideInAnimation = animation([
-  style({ transform: "translateX(100%)" }),
-  animate("0.5s ease", style({ transform: "translateX(0%)" }))
-]);
-
-export const slideOutAnimation = animation([
-  animate("0.5s ease", style({ transform: "translateX(100%)" }))
-]);
+import {
+  slideInAnimation,
+  slideOutAnimation,
+  AnimationPhaseName
+} from "./animations";
 
 @Component({
   selector: "my-app",
@@ -35,11 +22,25 @@ export const slideOutAnimation = animation([
     trigger("panelAnimation", [
       transition(":enter", [useAnimation(slideInAnimation)]),
       transition(":leave", [useAnimation(slideOutAnimation)])
+    ]),
+    trigger("enabledStateChange", [
+      state(
+        "start",
+        style({
+          background: "red"
+        })
+      ),
+      state(
+        "done",
+        style({
+          background: "green"
+        })
+      ),
+      transition("* => *", animate("300ms ease-out"))
     ])
   ]
 })
 export class AppComponent {
-  name = "Angular " + VERSION.major;
   debug: any;
   eventState = "";
   showNotifNav = false;

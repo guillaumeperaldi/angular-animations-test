@@ -45,3 +45,8 @@ button {
   -ms-user-select: none;
   user-select: none;
 }
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  border: 1px solid red;
+}
