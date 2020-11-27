@@ -19,10 +19,6 @@ import {
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
   animations: [
-    trigger("panelAnimation", [
-      transition(":enter", [useAnimation(slideInAnimation)]),
-      transition(":leave", [useAnimation(slideOutAnimation)])
-    ]),
     trigger("enabledStateChange", [
       state(
         "start",
@@ -37,6 +33,10 @@ import {
         })
       ),
       transition("* => *", animate("300ms ease-out"))
+    ]),
+    trigger("panelAnimation", [
+      transition(":enter", [useAnimation(slideInAnimation)]),
+      transition(":leave", [useAnimation(slideOutAnimation)])
     ])
   ]
 })
