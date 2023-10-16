@@ -7,12 +7,10 @@ import {
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Page1Component } from './components/page1/page1.component';
-import { Page2Component } from './components/page2/page2.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
-  declarations: [AppComponent, Page1Component, Page2Component],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [
     {
