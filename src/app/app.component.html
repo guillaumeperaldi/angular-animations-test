@@ -35,6 +35,26 @@
   </div>
 </div>
 <div class="test2">
+  <div class="tabs">
+    <section
+      class="{{ tab === 'left-pan' ? 'selected' : '' }}"
+      (click)="tab = 'left-pan'"
+    >
+      <span>Left</span>
+    </section>
+    <section
+      class="{{ tab === 'middle-pan' ? 'selected' : '' }}"
+      (click)="tab = 'middle-pan'"
+    >
+      <span>Middle</span>
+    </section>
+    <section
+      class="{{ tab === 'right-pan' ? 'selected' : '' }}"
+      (click)="tab = 'right-pan'"
+    >
+      <span>Right</span>
+    </section>
+  </div>
   <div class="tabs-content">
     <section *ngIf="tab === 'left-pan'">
       <span>LeftPan content</span>
