@@ -45,6 +45,7 @@ export class AppComponent {
   eventState = "";
   showNotifNav = false;
   animationPhase = AnimationPhaseName;
+  tab = 'left-pan';
 
   toggleShowNotifNav(): void {
     this.showNotifNav = !this.showNotifNav;

@@ -5,6 +5,7 @@
   overflow: hidden;
   display: flex;
   flex: 1;
+  flex-direction: column;
   min-height: 100%;
 }
 section.debug {
@@ -49,4 +50,17 @@ button {
   height: 10px;
   width: 100%;
   border: 1px solid red;
+}
+.test1,
+.test2 {
+  position: relative;
+}
+.test1 {
+  border-bottom: 8px solid #eee;
+}
+.test2 {
+  padding: 20px;
+}
+.test2 section {
+  border-bottom: 2px solid blue;
 }
